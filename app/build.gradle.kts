@@ -24,8 +24,8 @@ android {
             localDevices{
                 create("device1"){
                     device = "Pixel 8"
-                    apiLevel = 33
-                    systemImageSource = "google"
+                    apiLevel = 34
+                    systemImageSource = "google-atd"
                 }
             }
 
