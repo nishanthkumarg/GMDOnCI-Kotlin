@@ -1,5 +1,3 @@
-import com.android.build.api.dsl.ManagedVirtualDevice
-
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
@@ -21,14 +19,18 @@ android {
 
     testOptions {
         managedDevices{
-            localDevices{
+             localDevices {
                 create("device1"){
                     device = "Pixel 8"
                     apiLevel = 34
                     systemImageSource = "google-atd"
                 }
+                 create("device2"){
+                     device = "Pixel 8"
+                     apiLevel = 33
+                     systemImageSource = "google_apis_playstore"
+                 }
             }
-
         }
     }
 
