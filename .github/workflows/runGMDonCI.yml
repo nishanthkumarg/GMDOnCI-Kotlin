@@ -41,8 +41,8 @@ jobs:
 
       # Execute the clean managed devices to avoid lack of disk space for emulator snapshot
       - name: Execute Clean Managed Devices
-        run: ./gradlew app:cleanManagedDevices --info
+        run: ./gradlew app:cleanManagedDevices 
         
       # Execute Gradle managed device commands
       - name: GMD device1 setup
-        run: ./gradlew app:device2DebugAndroidTest -Dorg.gradle.workers.max=1 -Pandroid.testoptions.manageddevices.emulator.gpu="swiftshader_indirect" -Pandroid.experimental.testOptions.managedDevices.maxConcurrentDevices=1
+        run: ./gradlew app:device1DebugAndroidTest -Dorg.gradle.workers.max=1 -Pandroid.testoptions.manageddevices.emulator.gpu="swiftshader_indirect" -Pandroid.experimental.testOptions.managedDevices.maxConcurrentDevices=1
