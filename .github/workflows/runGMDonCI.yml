@@ -15,7 +15,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on ubuntu-latest
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     timeout-minutes: 60
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -45,4 +45,4 @@ jobs:
         
       # Execute Gradle managed device commands
       - name: GMD device1 setup
-        run: ./gradlew app:device2DebugAndroidTest -Dorg.gradle.workers.max=1 -Pandroid.testoptions.manageddevices.emulator.gpu="swiftshader_indirect"
+        run: ./gradlew app:device2DebugAndroidTest -Dorg.gradle.workers.max=1 -Pandroid.testoptions.manageddevices.emulator.gpu="swiftshader_indirect" -Pandroid.experimental.testOptions.managedDevices.maxConcurrentDevices=1
