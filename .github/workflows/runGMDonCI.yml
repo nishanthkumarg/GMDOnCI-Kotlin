@@ -10,7 +10,7 @@ on:
     branches: [ master, main ]
 jobs:
   gradle:
-    runs-on: macos-latest 
+    runs-on: ubuntu-latest 
     steps:
       - name: Checkout
         uses: actions/checkout@main
