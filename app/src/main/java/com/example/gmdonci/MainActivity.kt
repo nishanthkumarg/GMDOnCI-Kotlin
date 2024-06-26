@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
 
         binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action, For creating a new branch", Snackbar.LENGTH_LONG)
+            Snackbar.make(view, "Replace with your own action, New change to repro rthe bug", Snackbar.LENGTH_LONG)
                 .setAction("Action", null)
                 .setAnchorView(R.id.fab).show()
         }
