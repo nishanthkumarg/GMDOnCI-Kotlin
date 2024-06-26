@@ -51,3 +51,4 @@ jobs:
       # Execute Gradle managed device commands
       - name: GMD device1 setup
         run: ./gradlew app:device2Setup
+             -Pandroid.testoptions.manageddevices.emulator.gpu="swiftshader_indirect"
