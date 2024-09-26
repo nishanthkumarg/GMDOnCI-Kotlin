@@ -29,10 +29,11 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
 
         binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action, New change to repro rthe bug", Snackbar.LENGTH_LONG)
+            Snackbar.make(view, "Replace with your own , New change to repro rthe bug", Snackbar.LENGTH_LONG)
                 .setAction("Action", null)
                 .setAnchorView(R.id.fab).show()
         }
+        createComplexObject("John Doe", 30, "New York", "Software Engineer", true, 50000.0, true, 2, "Blue", "Pizza")
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -40,6 +41,26 @@ class MainActivity : AppCompatActivity() {
         menuInflater.inflate(R.menu.menu_main, menu)
         return true
     }
+    fun createComplexObject(
+        name: String,
+        age: Int,
+        city: String,
+        occupation: String,
+        isEmployed: Boolean,
+        salary: Double,
+        hasPets: Boolean,
+        numberOfPets: Int,
+        favoriteColor: String,
+        favoriteFood: String
+    ) {
+        // Function body: Here you would use the parameters to
+        // create and possibly return a complex object
+        println("Creating a complex object with the following properties:")
+        println("Name: $name")
+        println("Age: $age")
+        // ... and so on for all parameters
+    }
+
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         // Handle action bar item clicks here. The action bar will
@@ -51,9 +72,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    override fun onSupportNavigateUp(): Boolean {
+    override fun onSupportNavigateUp(): Boolean {   
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration)
                 || super.onSupportNavigateUp()
     }
+
+
 }

@@ -9,9 +9,9 @@ android {
 
     defaultConfig {
         applicationId = "com.example.gmdonci"
-        minSdk = 30
+        minSdk = 29
         targetSdk = 34
-        versionCode = 1
+        versionCode = 12
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -53,6 +53,11 @@ android {
     }
     buildFeatures {
         viewBinding = true
+    }
+    tasks.register("r8version"){
+        doLast{
+            println(com.android.tools.r8.Version.getVersionString())
+        }
     }
 }
 
