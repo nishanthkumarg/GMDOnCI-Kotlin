@@ -21,16 +21,16 @@ android {
     testOptions {
         managedDevices{
              localDevices {
-                create("device1"){
+                /*create("device1"){
                     device = "Pixel 8"
                     apiLevel = 33
                     systemImageSource = "aosp_atd"
-                }
-                 /*create("device2"){
+                }*/
+                 create("device2"){
                      device = "Pixel 8"
                      apiLevel = 33
                      systemImageSource = "google_apis"
-                 }*/
+                 }
             }
         }
     }
