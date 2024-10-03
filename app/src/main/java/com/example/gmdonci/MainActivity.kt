@@ -28,28 +28,12 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
-        binding.fab.setOnClickListener { snackbarView ->
-            Snackbar.make(
-                snackbarView,
-                "Replace with your own , New change to repro rthe bug",
-                Snackbar.LENGTH_LONG
-            )
+        binding.fab.setOnClickListener { view ->
+            Snackbar.make(view, "Replace with your own , New change to repro rthe bug", Snackbar.LENGTH_LONG)
                 .setAction("Action", null)
                 .setAnchorView(R.id.fab).show()
         }
-        val exampleUser = User(
-            name = "John sdfvadsfaaDoe",
-            age = 30,
-            address = Address(
-                city = "New York",
-                zipCode = "10asdfasdf001"
-            ),
-            occupation = "Software Engineadsfdsafasdfder",
-            hasJob = true,
-            salary = 60000.0,
-            pets = listOf(Pet("Dog", "aeaeeMax"), Pet("Cat", "Whasdfsdfaaeeaeiskers"))
-        )
-        createComplexObject(exampleUser)
+        createComplexObject("John Doe", 30, "New York", "Software Engineer", true, 50000.0, true, 2, "Blue", "Pizza")
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -57,28 +41,24 @@ class MainActivity : AppCompatActivity() {
         menuInflater.inflate(R.menu.menu_main, menu)
         return true
     }
-
-    /**
-     * Creates a complex object based on the provided user information.
-     * This function demonstrates the usage of user data to potentially
-     * construct a more intricate object.
-     *
-     * @param user The user object containing information like name, age, address,
-     * occupation, employment status, salary (if applicable), and pets.
-     */
-    fun createComplexObject(user: User) {
+    fun createComplexObject(
+        name: String,
+        age: Int,
+        city: String,
+        occupation: String,
+        isEmployed: Boolean,
+        salary: Double,
+        hasPets: Boolean,
+        numberOfPets: Int,
+        favoriteColor: String,
+        favoriteFood: String
+    ) {
         // Function body: Here you would use the parameters to
         // create and possibly return a complex object
         println("Creating a complex object with the following properties:")
-        println("Name: ${user.name}")
-        println("Age: ${user.age}")
-        println("City: ${user.address.city}")
-        println("Occupation: ${user.occupation}")
-        println("Is employed: ${user.hasJob}")
-        if (user.hasJob) {
-            println("Salary: ${user.salary}")
-        }
-        println("Pets: ${user.pets.joinToString { it.name }}")
+        println("Name: $name")
+        println("Age: $age")
+        // ... and so on for all parameters
     }
 
 
@@ -92,29 +72,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    override fun onSupportNavigateUp(): Boolean {
+    override fun onSupportNavigateUp(): Boolean {   
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration)
                 || super.onSupportNavigateUp()
     }
 
+
 }
-    data class User(
-        val name: String,
-        val age: Int,
-        val address: Address,
-        val occupation: String,
-        val hasJob: Boolean,
-        val salary: Double? = null,
-        val pets: List<Pet> = emptyList()
-    )
-
-    data class Address(
-        val city: String,
-        val zipCode: String
-    )
-
-    data class Pet(
-        val type: String,
-        val name: String
-    )
