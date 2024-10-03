@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
         // Function body: Here you would use the parameters to
         // create and possibly return a complex object
         println("Creating a complex object with the following properties:")
-        println("Name: $name")
+        println("adsfasdfasdsadfa: $name")
         println("Age: $age")
         // ... and so on for all parameters
     }
