@@ -9,9 +9,9 @@ android {
 
     defaultConfig {
         applicationId = "com.example.gmdonci"
-        minSdk = 30
+        minSdk = 29
         targetSdk = 34
-        versionCode = 1
+        versionCode = 12
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -21,11 +21,11 @@ android {
     testOptions {
         managedDevices{
              localDevices {
-                create("device1"){
+                /*create("device1"){
                     device = "Pixel 8"
-                    apiLevel = 34
+                    apiLevel = 33
                     systemImageSource = "aosp_atd"
-                }
+                }*/
                  create("device2"){
                      device = "Pixel 8"
                      apiLevel = 33
@@ -45,14 +45,19 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
     buildFeatures {
         viewBinding = true
+    }
+    tasks.register("r8version"){
+        doLast{
+            println(com.android.tools.r8.Version.getVersionString())
+        }
     }
 }
 
