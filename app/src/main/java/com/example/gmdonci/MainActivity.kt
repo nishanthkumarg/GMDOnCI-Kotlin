@@ -29,11 +29,11 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
 
         binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own , New change to repro rthe bug", Snackbar.LENGTH_LONG)
+            Snackbar.make(view, "Replace with yourasdfsdfasdfasdfaas own , New change to repro rthe bug", Snackbar.LENGTH_LONG)
                 .setAction("Action", null)
                 .setAnchorView(R.id.fab).show()
         }
-        createComplexObject("John Doe", 30, "New York", "Software Engineer", true, 50000.0, true, 2, "Blue", "Pizza")
+        createComplexObject("Johnqtqwtqwetqwe Doe", 30, "adsfadsfdsfads York", "Software Engineqwrewrqeweweer", true, 50000.0, true, 2, "Blue", "Pizza")
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
         // create and possibly return a complex object
         println("Creatinadsfadsfasfadsfdsag a complex object with the following properties:")
         println("adsfasdfasdsadfa: $name")
-        println("Age: $age")
+        println("Ageasdasdasdasasdas: $age")
         // ... and so on for all parameters
     }
 
