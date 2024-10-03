@@ -74,5 +74,34 @@ class ExampleInstrumentedTest {
         assert(true)
     }
 
+    @Test
+    fun failingTest9(){
+        assert(true)
+    }
+
+    @Test
+    fun failingTest10(){
+        assert(true)
+    }
+
+    @Test
+    fun failingTest11(){
+        assert(true)
+    }
+
+    @Test
+    fun failingTest12(){
+        assert(true)
+    }
+
+    @Test
+    fun failingTest13(){
+        assert(true)
+    }
+
+    @Test
+    fun failingTest14(){
+        assert(true)
+    }
 
 }
